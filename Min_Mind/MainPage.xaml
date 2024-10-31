@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Min_Mind.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+
+        <Image Source="rourourou.jpg"
+               Aspect="AspectFill"/>
+
+        <Image Source="minimente.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               WidthRequest="300"
+               HeightRequest="300"/>
+
+        <Image Source="showdebolice.png"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               WidthRequest="300"
+               HeightRequest="300"/>
+
+        <Image Source="genteboa.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+
+        <Image Source="lord.png"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"/>
+
+    </Grid>
+</ContentPage>
