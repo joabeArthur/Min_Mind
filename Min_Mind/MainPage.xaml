@@ -6,12 +6,50 @@
 
     <Grid>
 
+       <HorizontalStackLayout x:Name="Fundo_ceu">
+
         <Image Source="rourourou.jpg"
                Aspect="AspectFill"/>
+       
+        <Image Source="rourourou.jpg"
+               Aspect="AspectFill"/>
+
+        <Image Source="rourourou.jpg"
+               Aspect="AspectFill"/>
+       
+       </HorizontalStackLayout>
+
+       <HorizontalStackLayout x:Name="SoleLua">
+        <Image Source="minimente.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               WidthRequest="300"
+               HeightRequest="300"/>
 
         <Image Source="minimente.png"
                HorizontalOptions="Start"
                VerticalOptions="Start"
+               WidthRequest="300"
+               HeightRequest="300"/>
+
+        <Image Source="minimente.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               WidthRequest="300"
+               HeightRequest="300"/>
+        
+       </HorizontalStackLayout>
+
+       <HorizontalStackLayout x:Name="Arvore">
+        <Image Source="showdebolice.png"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
+               WidthRequest="300"
+               HeightRequest="300"/>
+       
+        <Image Source="showdebolice.png"
+               HorizontalOptions="End"
+               VerticalOptions="Center"
                WidthRequest="300"
                HeightRequest="300"/>
 
@@ -20,14 +58,38 @@
                VerticalOptions="Center"
                WidthRequest="300"
                HeightRequest="300"/>
+       
+       </HorizontalStackLayout>
+
+       <HorizontalStackLayout x:Name="Omano">
+        <Image Source="genteboa.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+       
+        <Image Source="genteboa.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
 
         <Image Source="genteboa.png"
                HorizontalOptions="Center"
                VerticalOptions="Center"/>
 
+       </HorizontalStackLayout>
+
+       <HorizontalStackLayout x:Name="Chao">
         <Image Source="lord.png"
                HorizontalOptions="Fill"
                VerticalOptions="End"/>
+
+        <Image Source="lord.png"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"/>
+
+        <Image Source="lord.png"
+               HorizontalOptions="Fill"
+               VerticalOptions="End"/>
+
+       </HorizontalStackLayout>
 
     </Grid>
 </ContentPage>
