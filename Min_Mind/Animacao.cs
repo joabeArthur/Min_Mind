@@ -1,3 +1,5 @@
+using FFImageLoading.Maui;
+
 namespace Min_Mind;
 
 public  class Animacao
@@ -9,11 +11,11 @@ public  class Animacao
     protected int AnimacaoAtiva = 1;
     bool Parado = true;
     int FrameAtual = 1;
-    protected Image CompImagem;
+    protected CachedImageView ImageView;
 
-    public Animacao(Image ugauga)
+    public Animacao(CachedImageView ugauga)
     {
-        CompImagem = ugauga;
+        ImageView = ugauga;
     }
 
     public void Stop()
@@ -65,6 +67,16 @@ public  class Animacao
             {
                 FrameAtual = 0;
             }
+            else
+            {
+                Parado = true;
+                QuandoParar();
+            }
         }
+    }
+
+    public virtual void QuandoParar()
+    {
+     
     }
 }

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Min_Mind.MainPage"
+             xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              Shell.NavBarIsVisible="False">
 
     <Grid>
@@ -60,22 +61,7 @@
                HeightRequest="300"/>
        
        </HorizontalStackLayout>
-
-       <HorizontalStackLayout x:Name="Omano">
-        <Image Source="genteboa.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-       
-        <Image Source="genteboa.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-
-        <Image Source="genteboa.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
-
-       </HorizontalStackLayout>
-
+     
        <HorizontalStackLayout x:Name="Chao">
         <Image Source="lord.png"
                HorizontalOptions="Fill"
@@ -90,6 +76,11 @@
                VerticalOptions="End"/>
 
        </HorizontalStackLayout>
+
+        <Image x:Name="imgOmano"
+               Source="genteboa.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
 
     </Grid>
 </ContentPage>

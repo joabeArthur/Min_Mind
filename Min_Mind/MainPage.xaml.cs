@@ -12,9 +12,24 @@ public partial class MainPage : ContentPage
 	int LarguraJanela = 0;
 	int AlturaJanela = 0;
 
+	
+
+	Player player;
 	public MainPage()
 	{
 		InitializeComponent();
+		player = new Player(imgOmano);
+		player.Run();
+	}
+
+	async Task Desenha()
+	{
+		while (!Morto)
+		{
+			GerenciaCenarios();
+			player.Desenha();
+			await Task.Delay(TempoEntreFrames);
+		}
 	}
 
 	protected override void OnSizeAllocated(double w, double h)
@@ -49,13 +64,13 @@ public partial class MainPage : ContentPage
 		Chao.WidthRequest = w * 1.5;
 	}
 	
-	void GerenciaCanos()
+	void GerenciaCenarios()
 	{
 		MoveCenario();
-		GerenciaCano(Fundo_ceu);
-		GerenciaCano(SoleLua);
-		GerenciaCano(Arvore);
-		GerenciaCano(Chao);
+		GerenciaCenario(Fundo_ceu);
+		GerenciaCenario(SoleLua);
+		GerenciaCenario(Arvore);
+		GerenciaCenario(Chao);
 	}
 
 	void MoveCenario()
@@ -73,9 +88,15 @@ public partial class MainPage : ContentPage
 		if (view.WidthRequest + hs1.TranslationX < 0)
 		{
 			hs1.Children.Remove(view);
-			hs1.Children.Add(hs1);
+			hs1.Children.Add(view);
 			hs1.TranslationX = view.TranslationX;
 		}
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		Desenha();
+    }
 }
 
