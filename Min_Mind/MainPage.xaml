@@ -63,24 +63,26 @@
        </HorizontalStackLayout>
      
        <HorizontalStackLayout x:Name="Chao">
-        <Image Source="lord.png"
+        <Image Source="lordchao.png"
                HorizontalOptions="Fill"
                VerticalOptions="End"/>
 
-        <Image Source="lord.png"
+        <Image Source="lordchao.png"
                HorizontalOptions="Fill"
                VerticalOptions="End"/>
 
-        <Image Source="lord.png"
+        <Image Source="lordchao.png"
                HorizontalOptions="Fill"
                VerticalOptions="End"/>
 
        </HorizontalStackLayout>
 
-        <Image x:Name="imgOmano"
-               Source="genteboa.png"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"/>
+        <ff:CachedImageView x:Name="imgOmano"
+                            Source="lord01.png"
+                            CacheType="Disk"
+                            CacheDuration="365"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
 
     </Grid>
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using FFImageLoading.Maui;
 
 namespace Min_Mind;
 
@@ -8,6 +9,7 @@ public static class MauiProgram
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder
+			.UseFFImageLoading()
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{

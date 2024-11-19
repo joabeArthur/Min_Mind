@@ -13,7 +13,7 @@ public class Player : Animacao
         }
         for (int i = 1; i <= 20; i++)
         {
-            Animacao2.Add($"minimente{i.ToString("D2")}.png");
+            Animacao2.Add($"lord{i.ToString("D2")}.png");
             SetAnimacaoAtiva(1);
         }
     }

@@ -58,7 +58,7 @@ public  class Animacao
             TamanhoAnimacao = Animacao3.Count;
         }
 
-        CompImagem.Source = ImageSource.FromFile(NomeArquivo);
+        ImageView.Source = ImageSource.FromFile(NomeArquivo);
         FrameAtual++;
 
         if (FrameAtual >= TamanhoAnimacao)

@@ -42,7 +42,7 @@ public partial class MainPage : ContentPage
 	void CalculaVelocidade(double w)
 	{
 		Velocidade = (int) (w * 0.01);
-		Velocidade01 = (int) (w * 0.01);
+		Velocidade01 = (int) (w * 0.001);
 		Velocidade02 = (int) (w * 0.004);
 		Velocidade03 = (int) (w * 0.008);
 	}
