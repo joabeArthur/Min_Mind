@@ -6,6 +6,16 @@
              Shell.NavBarIsVisible="False">
 
     <Grid>
+       <Grid.GestureRecognizers>
+              <TapGestureRecognizer Tapped="ClicaNaTela"/>
+       </Grid.GestureRecognizers>
+
+    <ff:CachedImageView x:Name="ImgOmano"
+                            CacheType="Disk"
+                            CacheDuration="365"
+                            WidthRequest="50"
+                            HeightRequest="50"/>
+
 
        <HorizontalStackLayout x:Name="Fundo_ceu">
 
@@ -77,12 +87,6 @@
 
        </HorizontalStackLayout>
 
-        <ff:CachedImageView x:Name="imgOmano"
-                            Source="lord01.png"
-                            CacheType="Disk"
-                            CacheDuration="365"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"/>
-
+       
     </Grid>
 </ContentPage>

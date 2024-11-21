@@ -5,7 +5,7 @@ namespace Min_Mind;
 public delegate void CallBack();
 public class Player : Animacao
 {
-    public Player (CachedImageView a): base (a)
+    public Player (CachedImageView ugauga) : base (ugauga)
     {
         for (int i = 1; i <= 20; ++i)
         {
@@ -27,5 +27,20 @@ public class Player : Animacao
         Loop = true;
         SetAnimacaoAtiva(1);
         Play();
+    }
+
+    public void MoveY(int s)
+    {
+        ImageView.TranslationY += s;
+    }
+
+    public double GetY()
+    {
+        return ImageView.TranslationY;
+    }
+
+    public void SetY(double a)
+    {
+        ImageView.TranslationY = a;
     }
 }

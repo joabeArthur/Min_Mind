@@ -11,14 +11,24 @@ public partial class MainPage : ContentPage
 	int Velocidade03 = 0;
 	int LarguraJanela = 0;
 	int AlturaJanela = 0;
+	const int ForcaGravidade = 6;
+	bool EstaNoChao = true;
+	bool EstaNoAr = false;
+	bool EstaPulando = false;
+	int TempoPulando = 0;
+	int TempoNoAr = 0;
+	const int MaxTempoPulando = 6;
+	const int MaxTempoAr = 4;
+	const int ForcaPulo = 8;
 
-	
+
 
 	Player player;
+
 	public MainPage()
 	{
 		InitializeComponent();
-		player = new Player(imgOmano);
+		player = new Player(ImgOmano);
 		player.Run();
 	}
 
@@ -26,9 +36,16 @@ public partial class MainPage : ContentPage
 	{
 		while (!Morto)
 		{
-			GerenciaCenarios();
-			player.Desenha();
-			await Task.Delay(TempoEntreFrames);
+			if (!EstaPulando && !EstaNoAr)
+			{
+				AplicaGravidade();
+				player.Desenha();
+			}
+			else
+			{
+				AplicaPulo();
+				await Task.Delay(TempoEntreFrames);
+			}
 		}
 	}
 
@@ -41,29 +58,29 @@ public partial class MainPage : ContentPage
 
 	void CalculaVelocidade(double w)
 	{
-		Velocidade = (int) (w * 0.01);
-		Velocidade01 = (int) (w * 0.001);
-		Velocidade02 = (int) (w * 0.004);
-		Velocidade03 = (int) (w * 0.008);
+		Velocidade = (int)(w * 0.01);
+		Velocidade01 = (int)(w * 0.001);
+		Velocidade02 = (int)(w * 0.004);
+		Velocidade03 = (int)(w * 0.008);
 	}
 
 	void CorrigeTamanhoCenario(double w, double h)
 	{
 		foreach (var cor in Fundo_ceu.Children)
-		(cor as Image).WidthRequest = w;
+			(cor as Image).WidthRequest = w;
 		foreach (var na in SoleLua.Children)
-		(na as Image).WidthRequest = w;
+			(na as Image).WidthRequest = w;
 		foreach (var o in Arvore.Children)
-		(o as Image).WidthRequest = w;
+			(o as Image).WidthRequest = w;
 		foreach (var docaralh in Chao.Children)
-		(docaralh as Image).WidthRequest = w;
+			(docaralh as Image).WidthRequest = w;
 
 		Fundo_ceu.WidthRequest = w * 1.5;
 		SoleLua.WidthRequest = w * 1.5;
 		Arvore.WidthRequest = w * 1.5;
 		Chao.WidthRequest = w * 1.5;
 	}
-	
+
 	void GerenciaCenarios()
 	{
 		MoveCenario();
@@ -93,10 +110,63 @@ public partial class MainPage : ContentPage
 		}
 	}
 
-    protected override void OnAppearing()
-    {
-        base.OnAppearing();
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
 		Desenha();
+	}
+
+	void AplicaGravidade()
+	{
+
+		if (player.GetY() < 0)
+		{
+			player.MoveY(ForcaGravidade);
+		}
+		else if (player.GetY() >= 0)
+		{
+			player.SetY(0);
+			EstaNoChao = true;
+		}
+	}
+
+	void ClicaNaTela(object i, TappedEventArgs a)
+	{
+		EstaPulando = true;
+	}
+
+	void AplicaPulo()
+	{
+		EstaNoChao = false;
+		if (EstaPulando && TempoPulando >= MaxTempoPulando)
+		{
+			EstaPulando = false;
+			EstaNoAr = true;
+			TempoNoAr = 0;
+		}
+		else if (EstaNoAr && TempoNoAr >= MaxTempoAr)
+		{
+			EstaPulando = false;
+			EstaNoAr = false;
+			TempoPulando = 0;
+			TempoNoAr = 0;
+		}
+		else if (EstaPulando && TempoPulando < MaxTempoPulando)
+		{
+			player.MoveY(-ForcaPulo);
+			TempoNoAr++;
+		}
+		else if (EstaNoAr)
+		{
+			TempoNoAr++;
+		}
+	}
+	void OnGridTorred (object a, TappedEventArgs e)
+    {
+        if (EstaNoChao)
+        {
+            EstaPulando = true;
+        }
     }
 }
 
