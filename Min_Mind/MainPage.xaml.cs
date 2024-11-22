@@ -22,8 +22,8 @@ public partial class MainPage : ContentPage
 	const int ForcaPulo = 8;
 
 
-
 	Player player;
+	Inimigos inimigos;
 
 	public MainPage()
 	{
@@ -32,10 +32,16 @@ public partial class MainPage : ContentPage
 		player.Run();
 	}
 
+
 	async Task Desenha()
 	{
 		while (!Morto)
 		{
+			if (inimigos != null)
+			{
+				inimigos.Desenha(Velocidade);
+			}
+			
 			if (!EstaPulando && !EstaNoAr)
 			{
 				AplicaGravidade();
@@ -54,6 +60,9 @@ public partial class MainPage : ContentPage
 		base.OnSizeAllocated(w, h);
 		CorrigeTamanhoCenario(w, h);
 		CalculaVelocidade(w);
+
+		inimigos = new Inimigos(-w);
+		inimigos.Add(new Inimigo(ImgTchola));//+3
 	}
 
 	void CalculaVelocidade(double w)

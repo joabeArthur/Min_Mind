@@ -10,13 +10,6 @@
               <TapGestureRecognizer Tapped="ClicaNaTela"/>
        </Grid.GestureRecognizers>
 
-    <ff:CachedImageView x:Name="ImgOmano"
-                            CacheType="Disk"
-                            CacheDuration="365"
-                            WidthRequest="50"
-                            HeightRequest="50"/>
-
-
        <HorizontalStackLayout x:Name="Fundo_ceu">
 
         <Image Source="rourourou.jpg"
@@ -87,6 +80,18 @@
 
        </HorizontalStackLayout>
 
+       <Image x:Name="ImgTchola"
+              Source="didi.png"
+              WidthRequest="100"
+              HeightRequest="100"/>
+
+       <ff:CachedImageView x:Name="ImgOmano"
+                           CacheType="Disk"
+                            CacheDuration="365"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="100"
+                            HeightRequest="100"/>
        
     </Grid>
 </ContentPage>

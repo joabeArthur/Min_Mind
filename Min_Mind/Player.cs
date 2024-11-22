@@ -9,7 +9,7 @@ public class Player : Animacao
     {
         for (int i = 1; i <= 20; ++i)
         {
-            Animacao1.Add($"lord{i.ToString("D2")}.png");
+            Animacao1.Add($"lord01{i.ToString("D2")}.png");
         }
         for (int i = 1; i <= 20; i++)
         {
