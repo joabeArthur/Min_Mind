@@ -1,4 +1,6 @@
-﻿namespace Min_Mind;
+﻿using FFImageLoading.Maui;
+
+namespace Min_Mind;
 
 public partial class MainPage : ContentPage
 {

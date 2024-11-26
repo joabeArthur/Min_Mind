@@ -87,6 +87,7 @@
 
        <ff:CachedImageView x:Name="ImgOmano"
                            CacheType="Disk"
+                           Source=""
                             CacheDuration="365"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
