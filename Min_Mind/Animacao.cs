@@ -36,9 +36,9 @@ public  class Animacao
     public void Desenha()
     {
         if (Parado)
-        {
+        
             return;
-        }
+        
         string NomeArquivo = "";
         int TamanhoAnimacao = 0;
 

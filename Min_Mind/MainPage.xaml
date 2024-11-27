@@ -25,19 +25,16 @@
 
        <HorizontalStackLayout x:Name="SoleLua">
         <Image Source="minimente.png"
-               HorizontalOptions="Start"
                VerticalOptions="Start"
                WidthRequest="300"
                HeightRequest="300"/>
 
         <Image Source="minimente.png"
-               HorizontalOptions="Start"
                VerticalOptions="Start"
                WidthRequest="300"
                HeightRequest="300"/>
 
         <Image Source="minimente.png"
-               HorizontalOptions="Start"
                VerticalOptions="Start"
                WidthRequest="300"
                HeightRequest="300"/>
@@ -46,19 +43,16 @@
 
        <HorizontalStackLayout x:Name="Arvore">
         <Image Source="showdebolice.png"
-               HorizontalOptions="End"
                VerticalOptions="Center"
                WidthRequest="300"
                HeightRequest="300"/>
        
         <Image Source="showdebolice.png"
-               HorizontalOptions="End"
                VerticalOptions="Center"
                WidthRequest="300"
                HeightRequest="300"/>
 
         <Image Source="showdebolice.png"
-               HorizontalOptions="End"
                VerticalOptions="Center"
                WidthRequest="300"
                HeightRequest="300"/>
@@ -67,7 +61,6 @@
      
        <HorizontalStackLayout x:Name="Chao">
         <Image Source="lordchao.png"
-               HorizontalOptions="Fill"
                VerticalOptions="End"/>
 
         <Image Source="lordchao.png"
@@ -75,24 +68,24 @@
                VerticalOptions="End"/>
 
         <Image Source="lordchao.png"
-               HorizontalOptions="Fill"
                VerticalOptions="End"/>
 
        </HorizontalStackLayout>
 
-       <Image x:Name="ImgTchola"
-              Source="didi.png"
-              WidthRequest="100"
-              HeightRequest="100"/>
-
        <ff:CachedImageView x:Name="ImgOmano"
                            CacheType="Disk"
-                           Source=""
-                            CacheDuration="365"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            WidthRequest="100"
-                            HeightRequest="100"/>
+                           CacheDuration="365"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           WidthRequest="200"
+                           HeightRequest="200"/>
+
+       <Image x:Name="ImgTchola"
+              Source="minimente.png"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              WidthRequest="100"
+              HeightRequest="100"/>
        
     </Grid>
 </ContentPage>

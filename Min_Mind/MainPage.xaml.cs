@@ -39,10 +39,11 @@ public partial class MainPage : ContentPage
 	{
 		while (!Morto)
 		{
+			GerenciaCenarios();
 			if (inimigos != null)
-			{
+				
 				inimigos.Desenha(Velocidade);
-			}
+			
 			
 			if (!EstaPulando && !EstaNoAr)
 			{
@@ -50,11 +51,11 @@ public partial class MainPage : ContentPage
 				player.Desenha();
 			}
 			else
-			{
+			
 				AplicaPulo();
 				await Task.Delay(TempoEntreFrames);
 			}
-		}
+		
 	}
 
 	protected override void OnSizeAllocated(double w, double h)
@@ -109,15 +110,15 @@ public partial class MainPage : ContentPage
 		Chao.TranslationX -= Velocidade;
 	}
 
-	void GerenciaCenario(HorizontalStackLayout hs1)
+	void GerenciaCenario(HorizontalStackLayout hsl)
 	{
-		var view = (hs1.Children.First() as Image);
+		var view = (hsl.Children.First() as Image);
 
-		if (view.WidthRequest + hs1.TranslationX < 0)
+		if (view.WidthRequest + hsl.TranslationX < 0)
 		{
-			hs1.Children.Remove(view);
-			hs1.Children.Add(view);
-			hs1.TranslationX = view.TranslationX;
+			hsl.Children.Remove(view);
+			hsl.Children.Add(view);
+			hsl.TranslationX = view.TranslationX;
 		}
 	}
 
@@ -165,7 +166,7 @@ public partial class MainPage : ContentPage
 		else if (EstaPulando && TempoPulando < MaxTempoPulando)
 		{
 			player.MoveY(-ForcaPulo);
-			TempoNoAr++;
+			TempoPulando++;
 		}
 		else if (EstaNoAr)
 		{

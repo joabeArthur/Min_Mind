@@ -11,9 +11,9 @@ public class Player : Animacao
         {
             Animacao1.Add($"lord{i.ToString("D2")}.png");
         }
-        for (int i = 1; i <= 20; i++)
+        for (int i = 1; i <= 2; i++)
         {
-            Animacao2.Add($"lord{i.ToString("D2")}.png");
+            Animacao2.Add($"booga{i.ToString("D2")}.png");
             SetAnimacaoAtiva(1);
         }
     }
